@@ -2,19 +2,25 @@
   "simple": {
     "where[name:eq]": "hello"
   },
+  "simple_no_prefix": {
+    "[name:eq]": "hello"
+  },
+  "simple_no_brackets": {
+    "name:eq": "hello"
+  },
   "composite": {
-    "where[created_at:lt]": "2016-09-18T03:38:54.366Z",
-    "where[rating:gt]": 5
+    "created_at:lt": "2016-09-18T03:38:54.366Z",
+    "rating:gt": 5
   },
   "multiple_sibling": {
-    "where[created_at:gt]": "2016-09-18T03:38:54.366Z",
-    "where[rating:gt]": 2,
-    "where[rating:lt]": 5
+    "created_at:gt": "2016-09-18T03:38:54.366Z",
+    "rating:gt": 2,
+    "rating:lt": 5
   },
   "array": {
-    "where[director_id:in]": [23, 32, 3]
+    "director_id:in": [23, 32, 3]
   },
   "nested": {
-    "where[movie.director.name:eq]": "Christopher Nolan"
+    "movie.director.name:eq": "Christopher Nolan"
   }
 }

@@ -1,17 +1,17 @@
 {
-  "name": "objection-find-query",
-  "version": "0.2.0",
+  "name": "objection-find-query-builder",
+  "version": "1.0.0",
   "description": "query paramter constructor for objection-find",
   "main": "index.js",
   "scripts": {
-    "test": "xo && ava"
+    "test": "mocha test"
   },
   "engines": {
     "node": ">=0.10.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/afm-sayem/objection-find-query.git"
+    "url": "git+https://github.com/kibertoad/objection-find-query.git"
   },
   "keywords": [
     "objection",
@@ -19,14 +19,21 @@
     "objection-find"
   ],
   "author": "AFM Sayem <afm.sayem@gmail.com>",
+  "contributors": [
+    {
+      "name": "Igor Savin",
+      "email": "kibertoad@gmail.com"
+    }
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/afm-sayem/objection-find-query/issues"
+    "url": "https://github.com/kibertoad/objection-find-query/issues"
   },
-  "homepage": "https://github.com/afm-sayem/objection-find-query#readme",
+  "homepage": "https://github.com/kibertoad/objection-find-query#readme",
   "devDependencies": {
-    "ava": "^0.16.0",
-    "xo": "^0.16.0"
+    "mocha": "^4.1.0",
+    "chai": "^4.1.2",
+    "xo": "^0.18.2"
   },
   "xo": {
     "space": true

@@ -1,22 +1,25 @@
-'use strict';
-
-exports.format = function (paramValues, prefix) {
-  var params = compact(paramValues);
-  var paramObj = {};
-  for (var op in params) {
-    if ({}.hasOwnProperty.call(params, op)) {
-      Object.assign(paramObj, getFilters(flatten(params[op]), op, prefix));
+exports.format = function (paramValues, prefix, wrapInBrackets) {
+	const params = compact(paramValues);
+	const paramObj = {};
+	for (let op in params) {
+    if (params.hasOwnProperty(op)) {
+      Object.assign(paramObj, getFilters(flatten(params[op]), op, prefix, wrapInBrackets));
     }
   }
   return paramObj;
 };
 
-function getFilters(data, op, prefix) {
-  var filterObj = {};
+function getFilters(data, op, prefix, wrapInBrackets) {
+    prefix = prefix || '';
+	const filterObj = {};
 
-  for (var key in data) {
-    if ({}.hasOwnProperty.call(data, key)) {
-      filterObj[prefix + '[' + key + ':' + op + ']'] = data[key];
+	for (let key in data) {
+    if (data.hasOwnProperty(key)) {
+      if (wrapInBrackets) {
+        filterObj[prefix + '[' + key + ':' + op + ']'] = data[key];
+	  } else {
+		filterObj[prefix + key + ':' + op] = data[key];
+      }
     }
   }
 
@@ -24,9 +27,9 @@ function getFilters(data, op, prefix) {
 }
 
 function compact(objectWithEmptyValues) {
-  var obj = JSON.parse(JSON.stringify(objectWithEmptyValues));
-  for (var i in obj) {
-    if ({}.hasOwnProperty.call(obj, i)) {
+	const obj = JSON.parse(JSON.stringify(objectWithEmptyValues));
+	for (let i in obj) {
+    if (obj.hasOwnProperty(i)) {
       if (obj[i] === undefined || obj[i] === null) {
         delete obj[i];
       } else if (typeof obj[i] === 'object' && !(obj[i] instanceof(Array))) {
@@ -38,11 +41,11 @@ function compact(objectWithEmptyValues) {
 }
 
 function flatten(obj) {
-  var flatObj = {};
+	const flatObj = {};
 
-  function makeFlat(obj, path) {
-    var keys = Array.isArray(obj) || (typeof obj === 'string') ? false : Object.keys(obj);
-    if (keys.length) {
+	function makeFlat(obj, path) {
+	  const keys = Array.isArray(obj) || (typeof obj === 'string') ? false : Object.keys(obj);
+	  if (keys.length) {
       keys.forEach(function (key) {
         makeFlat(obj[key], (path ? path + '.' : path) + key);
       });
