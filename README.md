@@ -1,6 +1,6 @@
 ## objection-find-query
 
-[![Build Status](https://travis-ci.org/afm-sayem/objection-find-query.svg?branch=master)](https://travis-ci.org/afm-sayem/objection-find-query)
+Based on original work by AFM Sayem - https://github.com/kibertoad/objection-find-query
 
 Construct complex api query on the frontend, for endpoints implementing [objection-find](https://github.com/Vincit/objection-find).
 
@@ -51,4 +51,4 @@ const formattedParams = ofq.format(params);
 
 ## Installation
 
-`npm install objection-find-query`
+`npm install objection-find-query-builder`
