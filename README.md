@@ -62,6 +62,16 @@ const formattedParams = builder.greaterThan('field', 1).lessThan('field', 3).bui
 
 ```
 
+Supported operations:
+
+* greaterThan
+* lessThan
+* greaterThanOrEqual
+* lessThanOrEqual
+* equal
+* in
+* eager (retrieve entities from specified relationship eagerly)
+
 ## Installation
 
 `npm install objection-find-query-builder`

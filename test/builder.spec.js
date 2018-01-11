@@ -56,6 +56,15 @@ describe('builder', () => {
 		}, params)
 	});
 
+	it('eager', () => {
+		const builder = objectionBuilder.builder();
+		const params = builder.eager(['contacts']).build();
+
+		assert.deepEqual({
+			'eager': [ 'contacts' ]
+		}, params)
+	});
+
 	it('between', () => {
 		const builder = objectionBuilder.builder();
 		const params = builder
