@@ -1,11 +1,13 @@
 ## objection-find-query
 
-Based on original work by AFM Sayem - https://github.com/kibertoad/objection-find-query
+Based on original work by AFM Sayem - https://github.com/afm-sayem/objection-find-query
 
 Construct complex api query on the frontend, for endpoints implementing [objection-find](https://github.com/Vincit/objection-find).
 
 
 Usage:
+
+## Manual formatting
 
 ```javascript
 
@@ -44,8 +46,19 @@ Usage:
   }
 */
 
-const ofq = require('objection-find-query');
-const formattedParams = ofq.format(params);
+const queryBuilder = require('objection-find-query-builder');
+const formattedParams = queryBuilder.format(params);
+
+```
+
+## Builder
+
+```
+
+const queryBuilder = require('objection-find-query-builder');
+
+const builder = queryBuilder.builder();
+const formattedParams = builder.greaterThan('field', 1).lessThan('field', 3).build();
 
 ```
 

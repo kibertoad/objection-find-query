@@ -6,7 +6,7 @@ const prefix = 'where';
 
 const assert = require('chai').assert;
 
-describe('objection-find-query', () => {
+describe('formatter', () => {
 
 	it('simple, brackets', () => {
 		const result = ofq.format(data.simple, prefix, true);
