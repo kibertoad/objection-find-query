@@ -83,6 +83,25 @@ describe('builder', () => {
 		}, params)
 	});
 
+	it('orderByAsc', () => {
+		const builder = objectionBuilder.builder();
+		const params = builder.orderByAsc('name').build();
+
+		assert.deepEqual({
+			'orderBy': 'name'
+		}, params)
+	});
+
+	it('orderByDesc', () => {
+		const builder = objectionBuilder.builder();
+		const params = builder.orderByDesc('name').build();
+
+		assert.deepEqual({
+			'orderByDesc': 'name'
+		}, params)
+	});
+
+
 
 	it('between', () => {
 		const builder = objectionBuilder.builder();
