@@ -1,6 +1,6 @@
 {
   "name": "objection-find-query-builder",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "query paramter constructor for objection-find",
   "main": "index.js",
   "scripts": {

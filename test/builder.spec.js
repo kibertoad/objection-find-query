@@ -56,14 +56,33 @@ describe('builder', () => {
 		}, params)
 	});
 
-	it('eager', () => {
+	it('single eager', () => {
+		const builder = objectionBuilder.builder();
+		const params = builder.eager('contacts').build();
+
+		assert.deepEqual({
+			'eager': 'contacts'
+		}, params)
+	});
+
+	it('single array eager', () => {
 		const builder = objectionBuilder.builder();
 		const params = builder.eager(['contacts']).build();
 
 		assert.deepEqual({
-			'eager': [ 'contacts' ]
+			'eager': '[contacts]'
 		}, params)
 	});
+
+	it('multiple eager', () => {
+		const builder = objectionBuilder.builder();
+		const params = builder.eager(['contacts', 'address']).build();
+
+		assert.deepEqual({
+			'eager': '[contacts,address]'
+		}, params)
+	});
+
 
 	it('between', () => {
 		const builder = objectionBuilder.builder();
