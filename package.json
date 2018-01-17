@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha test",
     "prettier": "prettier --write \"{lib,test}/**/*.{js,ts}\"",
-    "eslint": "eslint --format codeframe \"lib/**/*.js\" \"test/**/*.js\""
+    "eslint": "eslint \"lib/**/*.js\" \"test/**/*.js\""
   },
   "engines": {
     "node": ">=0.10.0"
@@ -33,7 +33,6 @@
   },
   "homepage": "https://github.com/kibertoad/objection-find-query#readme",
   "devDependencies": {
-    "babel-eslint": "^8.2.1",
     "chai": "^4.1.2",
     "eslint": "^4.15.0",
     "eslint-plugin-prettier": "^2.5.0",
