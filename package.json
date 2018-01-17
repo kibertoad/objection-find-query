@@ -4,7 +4,9 @@
   "description": "query paramter constructor for objection-find",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "mocha test",
+    "prettier": "prettier --write \"{lib,test}/**/*.{js,ts}\"",
+    "eslint": "eslint --format codeframe \"lib/**/*.js\" \"test/**/*.js\""
   },
   "engines": {
     "node": ">=0.10.0"
@@ -31,11 +33,11 @@
   },
   "homepage": "https://github.com/kibertoad/objection-find-query#readme",
   "devDependencies": {
-    "mocha": "^4.1.0",
+    "babel-eslint": "^8.2.1",
     "chai": "^4.1.2",
-    "xo": "^0.18.2"
-  },
-  "xo": {
-    "space": true
+    "eslint": "^4.15.0",
+    "eslint-plugin-prettier": "^2.5.0",
+    "mocha": "^4.1.0",
+    "prettier": "^1.10.2"
   }
 }
