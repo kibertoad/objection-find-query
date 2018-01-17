@@ -69,8 +69,11 @@ Supported operations:
 * greaterThanOrEqual
 * lessThanOrEqual
 * equal
-* in
+* inSet (value equals to any value in a given array)
+* anyLike (value of any specified fields matches given string with optional wildcards)
 * eager (retrieve entities from specified relationship eagerly)
+* orderByAsc
+* orderByDesc
 
 ## Installation
 

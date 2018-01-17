@@ -62,13 +62,49 @@ describe('builder', () => {
     );
   });
 
-  it('in', () => {
+  it('inSet', () => {
     const builder = objectionBuilder.builder();
-    const params = builder.in('field', [4, 9]).build();
+    const params = builder.inSet('field', [4, 9]).build();
 
     assert.deepEqual(
       {
         'field:in': [4, 9]
+      },
+      params
+    );
+  });
+
+  it('anyLike - multiple values', () => {
+    const builder = objectionBuilder.builder();
+    const params = builder.anyLike(['lastName', 'movies.name'], '%Gump%').build();
+
+    assert.deepEqual(
+      {
+        'lastName|movies.name:like': '%Gump%'
+      },
+      params
+    );
+  });
+
+  it('anyLike - single value array', () => {
+    const builder = objectionBuilder.builder();
+    const params = builder.anyLike(['lastName'], '%Gump%').build();
+
+    assert.deepEqual(
+      {
+        'lastName:like': '%Gump%'
+      },
+      params
+    );
+  });
+
+  it('anyLike - single value not array', () => {
+    const builder = objectionBuilder.builder();
+    const params = builder.anyLike('lastName', '%Gump%').build();
+
+    assert.deepEqual(
+      {
+        'lastName:like': '%Gump%'
       },
       params
     );
