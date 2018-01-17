@@ -7,6 +7,17 @@ Construct complex api query on the frontend, for endpoints implementing [objecti
 
 Usage:
 
+## Builder
+
+```
+
+const queryBuilder = require('objection-find-query-builder');
+
+const builder = queryBuilder.builder();
+const formattedParams = builder.greaterThan('field', 1).lessThan('field', 3).build();
+
+```
+
 ## Manual formatting
 
 ```javascript
@@ -48,17 +59,6 @@ Usage:
 
 const queryBuilder = require('objection-find-query-builder');
 const formattedParams = queryBuilder.format(params);
-
-```
-
-## Builder
-
-```
-
-const queryBuilder = require('objection-find-query-builder');
-
-const builder = queryBuilder.builder();
-const formattedParams = builder.greaterThan('field', 1).lessThan('field', 3).build();
 
 ```
 
