@@ -26,6 +26,16 @@ describe('eager.utils', () => {
 		assert.equal(result, '[]');
 	});
 
+	it('gets elements', () => {
+		const result = eagerUtils.getElements('[param1, param2]');
+		assert.deepEqual(result, ['param1', 'param2']);
+	});
+
+	it('gets elements if undefined', () => {
+		const result = eagerUtils.getElements(undefined);
+		assert.deepEqual(result, []);
+	});
+
 	it('adds to empty argument', () => {
 		const result = eagerUtils.appendToEagerParam(undefined, 'param2');
 		assert.equal(result, '[param2]');
