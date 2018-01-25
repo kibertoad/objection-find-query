@@ -18,6 +18,18 @@ const formattedParams = builder.greaterThan('field', 1).lessThan('field', 3).bui
 
 ```
 
+
+## Eager param mutation
+
+```
+
+const eagerUtils = require('objection-find-query-builder').eagerUtils;
+
+const modifiedParamsRemoved = eagerUtils.removeFromEagerParam('[param1,param2,param3]', 'param2');
+const modifiedParamsAppended = eagerUtils.appendToEagerParam('[param1]', 'param2');
+
+```
+
 ## Manual formatting
 
 ```javascript

@@ -1,6 +1,6 @@
 {
   "name": "objection-find-query-builder",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "query paramter constructor for objection-find",
   "main": "index.js",
   "scripts": {
@@ -34,9 +34,9 @@
   "homepage": "https://github.com/kibertoad/objection-find-query#readme",
   "devDependencies": {
     "chai": "^4.1.2",
-    "eslint": "^4.15.0",
+    "eslint": "^4.16.0",
     "eslint-plugin-prettier": "^2.5.0",
-    "mocha": "^4.1.0",
+    "mocha": "^5.0.0",
     "prettier": "^1.10.2"
   }
 }
