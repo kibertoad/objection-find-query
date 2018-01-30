@@ -83,6 +83,7 @@ Supported operations:
 * equal
 * inSet (value equals to any value in a given array)
 * anyLike (value of any specified fields matches given string with optional wildcards)
+* anyLikeLower (value of any specified fields matches given string with optional wildcards - case insensitive)
 * eager (retrieve entities from specified relationship eagerly)
 * orderByAsc
 * orderByDesc

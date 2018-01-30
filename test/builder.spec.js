@@ -110,6 +110,42 @@ describe('builder', () => {
     );
   });
 
+	it('anyLikeLower - multiple values', () => {
+		const builder = objectionBuilder.builder();
+		const params = builder.anyLikeLower(['lastName', 'movies.name'], '%Gump%').build();
+
+		assert.deepEqual(
+			{
+				'lastName|movies.name:likeLower': '%Gump%'
+			},
+			params
+		);
+	});
+
+	it('anyLikeLower - single value array', () => {
+		const builder = objectionBuilder.builder();
+		const params = builder.anyLikeLower(['lastName'], '%Gump%').build();
+
+		assert.deepEqual(
+			{
+				'lastName:likeLower': '%Gump%'
+			},
+			params
+		);
+	});
+
+	it('anyLikeLower - single value not array', () => {
+		const builder = objectionBuilder.builder();
+		const params = builder.anyLikeLower('lastName', '%Gump%').build();
+
+		assert.deepEqual(
+			{
+				'lastName:likeLower': '%Gump%'
+			},
+			params
+		);
+	});
+
   it('single eager', () => {
     const builder = objectionBuilder.builder();
     const params = builder.eager('contacts').build();
