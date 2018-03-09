@@ -68,7 +68,7 @@ describe('builder', () => {
 
     assert.deepEqual(
       {
-        'field:in': [4, 9]
+        'field:in': '[4,9]'
       },
       params
     );
@@ -145,6 +145,54 @@ describe('builder', () => {
 			params
 		);
 	});
+
+  it('groupBy', () => {
+	const builder = objectionBuilder.builder();
+    const params = builder.groupBy('contacts').build();
+
+    assert.deepEqual(
+	  {
+	    groupBy: 'contacts'
+	  },
+	  params
+	);
+  });
+
+  it('groupBy array', () => {
+    const builder = objectionBuilder.builder();
+    const params = builder.groupBy('[contacts, phone]').build();
+
+    assert.deepEqual(
+	  {
+		groupBy: '[contacts, phone]'
+	  },
+	  params
+    );
+  });
+
+  it('count', () => {
+	const builder = objectionBuilder.builder();
+    const params = builder.count('contacts').build();
+
+    assert.deepEqual(
+	  {
+	    count: 'contacts'
+	  },
+	  params
+  );
+});
+
+  it('count array', () => {
+	const builder = objectionBuilder.builder();
+    const params = builder.count('[contacts, phone]').build();
+
+    assert.deepEqual(
+	  {
+	    count: '[contacts, phone]'
+	  },
+	  params
+  );
+});
 
   it('single eager', () => {
     const builder = objectionBuilder.builder();
