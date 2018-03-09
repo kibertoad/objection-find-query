@@ -18,7 +18,7 @@
     "rating:lt": 5
   },
   "array": {
-    "director_id:in": "[23,32,3]"
+    "director_id:in": "23,32,3"
   },
   "nested": {
     "movie.director.name:eq": "Christopher Nolan"

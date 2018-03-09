@@ -68,7 +68,7 @@ describe('builder', () => {
 
     assert.deepEqual(
       {
-        'field:in': '[4,9]'
+        'field:in': '4,9'
       },
       params
     );
