@@ -65,7 +65,7 @@ const modifiedParamsAppended = eagerUtils.appendToEagerParam('[param1]', 'param2
     'gross_income:gt': 200000,
     'actors.age:gt': 23,
     'released:lt': 1984,
-    'ratings:in': [3, 4]
+    'ratings:in': 3,4
   }
 */
 
@@ -87,6 +87,10 @@ Supported operations:
 * eager (retrieve entities from specified relationship eagerly)
 * orderByAsc
 * orderByDesc
+* groupBy
+* count
+* rangeStart
+* rangeEnd
 
 ## Installation
 
