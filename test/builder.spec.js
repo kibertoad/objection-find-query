@@ -146,6 +146,30 @@ describe('builder', () => {
 		);
 	});
 
+  it('rangeStart', () => {
+	const builder = objectionBuilder.builder();
+    const params = builder.rangeStart(0).build();
+
+    assert.deepEqual(
+	  {
+		  rangeStart: 0
+	  },
+	  params
+    );
+  });
+
+  it('rangeEnd', () => {
+	const builder = objectionBuilder.builder();
+    const params = builder.rangeEnd(0).build();
+
+    assert.deepEqual(
+	  {
+		rangeEnd: 0
+	  },
+	  params
+    );
+  });
+
   it('groupBy', () => {
 	const builder = objectionBuilder.builder();
     const params = builder.groupBy('contacts').build();
