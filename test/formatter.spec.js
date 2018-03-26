@@ -8,18 +8,13 @@ const assert = require('chai').assert;
 
 describe('formatter', () => {
   it('simple, brackets', () => {
-    const result = ofq.format(data.simple, prefix, true);
+    const result = ofq.format(data.simple, prefix);
     assert.deepEqual(expected.simple, result);
   });
 
   it('simple, no brackets, no prefix', () => {
-    const result = ofq.format(data.simple, '', false);
+    const result = ofq.format(data.simple, '');
     assert.deepEqual(expected.simple_no_brackets, result);
-  });
-
-  it('simple, no prefix', () => {
-    const result = ofq.format(data.simple, '', true);
-    assert.deepEqual(expected.simple_no_prefix, result);
   });
 
   it('composite', () => {
