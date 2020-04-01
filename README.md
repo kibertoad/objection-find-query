@@ -81,6 +81,7 @@ Supported operations:
 * greaterThanOrEqual
 * lessThanOrEqual
 * equal
+* notEqual
 * inSet (value equals to any value in a given array)
 * anyLike (value of any specified fields matches given string with optional wildcards)
 * anyLikeLower (value of any specified fields matches given string with optional wildcards - case insensitive)

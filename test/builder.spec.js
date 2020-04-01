@@ -14,6 +14,18 @@ describe('builder', () => {
     );
   });
 
+  it('notEqual', () => {
+    const builder = objectionBuilder.builder();
+    const params = builder.notEqual('field', 'value').build();
+
+    assert.deepEqual(
+      {
+        'field:neq': 'value'
+      },
+      params
+    );
+  });
+
   it('gt', () => {
     const builder = objectionBuilder.builder();
     const params = builder.greaterThan('field', 5).build();
